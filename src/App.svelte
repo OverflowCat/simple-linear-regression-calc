@@ -49,6 +49,9 @@
   function sum(arr: number[]) {
     return arr.reduce((partialSum, a) => partialSum + a, 0);
   }
+  function trimEndZeros(x: number | string) {
+    return String(x).replace(/\.?0+$/, "");
+  }
 </script>
 
 <h1><b>一元线性回归法</b>实验数据计算器</h1>
@@ -77,18 +80,18 @@
         <tr>
           <td><Katex>xy</Katex></td>
           {#each xys as xy}
-            <td>{xy.toFixed(5)}</td>
+            <td>{trimEndZeros(xy.toFixed(5))}</td>
           {/each}
         </tr>
         <tr>
           <td><Katex>x^2</Katex></td>
           {#each x_sqs as x_sq}
-            <td>{x_sq.toFixed(5)}</td>
+            <td>{trimEndZeros(x_sq.toFixed(5))}</td>
           {/each}
         </tr><tr>
           <td><Katex>y^2</Katex></td>
           {#each y_sqs as y_sq}
-            <td>{y_sq.toFixed(5)}</td>
+            <td>{trimEndZeros(y_sq.toFixed(5))}</td>
           {/each}
         </tr>
       </tbody>
