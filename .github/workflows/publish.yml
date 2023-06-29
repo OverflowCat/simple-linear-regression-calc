@@ -14,6 +14,7 @@ jobs:
       with:
         node-version: 18.x
     - run: npm i -g pnpm
+    - run: cd ./simple-linear-regression-calc
     - run: pnpm i
     - run: pnpm run build
     
